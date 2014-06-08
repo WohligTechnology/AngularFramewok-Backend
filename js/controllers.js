@@ -1,45 +1,42 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
 
-phonecatControllers.controller('home', ['$scope', 'TemplateService',
-  function ($scope, TemplateService,$timeout) {
-        TemplateService.changetitle("Home");
-        TemplateService.header = "Home";
-      TemplateService.sidebarurl = "views/menu.html";
+phonecatControllers.controller('home', ['$scope', 'TemplateService', 'NavigationService',
+  function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        $scope.homeactive = "active";
-      $scope.mobileoshome="Apple";
-        $scope.$watch('mobileoshome', function (newval,oldval) {
-            console.log("From Home : " + oldval);
-            console.log("From Home : " + newval);
-            console.log("FROM HOME : "+ $(".demo2").text());
-        });
-        $scope.changemobileoshome=function() {
-            $scope.mobileoshome="New IOS";
-        }
+        $scope.menutitle = NavigationService.makeactive("Home");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+  }]);
+phonecatControllers.controller('about', ['$scope', 'TemplateService', 'NavigationService',
+  function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("About");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+  }]);
+phonecatControllers.controller('services', ['$scope', 'TemplateService', 'NavigationService',
+  function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Services");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+  }]);
+phonecatControllers.controller('portfolio', ['$scope', 'TemplateService', 'NavigationService',
+  function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Portfolio");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+  }]);
+phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
+  function ($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        $scope.menutitle = NavigationService.makeactive("Contact");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
   }]);
 
-phonecatControllers.controller('about', ['$scope', 'TemplateService',
- function ($scope, TemplateService) {
-        TemplateService.changetitle("About");
-        TemplateService.header = "About";
-        TemplateService.sidebarurl = "views/menu2.html";
-        $scope.template = TemplateService;
-        $scope.aboutactive = "active";
-     $scope.mobileos="Google";
-     $scope.$watch('mobileos', function (newval,oldval) {
-         console.log("From About : " + oldval);
-         console.log("From About : " + newval);
-     });
-        // angular.bootstrap(document, ['demo']);
-  }]);
-phonecatControllers.controller('message', ['$scope', 'TemplateService',
- function ($scope, TemplateService) {
-        TemplateService.changetitle("Message");
-        TemplateService.header = "Message";
 
-        $scope.template = TemplateService;
-        $scope.messageactive = "active";
-  }]);
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;

@@ -3,6 +3,7 @@ var firstapp = angular.module('firstapp', [
   'ngRoute',
   'phonecatControllers',
   'templateservicemod',
+    'navigationservice'
 ]);
 
 firstapp.config(['$routeProvider',
@@ -16,9 +17,17 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'about'
         }).
-        when('/message', {
+        when('/services', {
             templateUrl: 'views/template.html',
-            controller: 'message'
+            controller: 'services'
+        }).
+        when('/portfolio', {
+            templateUrl: 'views/template.html',
+            controller: 'portfolio'
+        }).
+        when('/contact', {
+            templateUrl: 'views/template.html',
+            controller: 'contact'
         }).
         otherwise({
             redirectTo: '/home'
