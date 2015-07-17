@@ -9,9 +9,13 @@ var firstapp = angular.module('firstapp', [
 firstapp.config(['$routeProvider',
   function ($routeProvider) {
         $routeProvider.
-        when('/home', {
+        when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'login'
+        }).
+        when('/user', {
             templateUrl: 'views/template.html',
-            controller: 'home'
+            controller: 'user'
         }).
         when('/about', {
             templateUrl: 'views/template.html',

@@ -1,0 +1,121 @@
+@base-color-white: #fff;
+@base-color-black: #000;
+@base-color: #FF9D43;
+@base-border-color: #FF7B00;
+@body-font: 14px;
+@base-width: 100%;
+@text-color: #444;
+@alert-danger-bg: red;
+@base-pixel: 20px;
+body {
+    .login-cont {
+        padding: @base-pixel;
+        .login-header {
+            text-align: center;
+            padding: @base-pixel+5px 0;
+        }
+        .bg-primary {
+            color: @base-color-white;
+            background-color: @base-color;
+        }
+        .btn1 {
+            color: rgb(49, 46, 46);
+            background-color: @base-color;
+            font-size: 16px;
+        }
+        .btn1:not([disabled]):hover {
+            background-color: @base-color;
+            color: white;
+        }
+        .block-header {
+            padding: 15px 20px;
+            -webkit-transition: opacity .2s ease-out;
+            transition: opacity .2s ease-out;
+        }
+        .block-options {
+            float: right;
+            margin: -3px 0 -3px 15px;
+            padding: 0;
+            height: 24px;
+            list-style: none;
+        }
+        .block-options>li {
+            display: inline-block;
+            margin: 0 2px;
+            padding: 0;
+        }
+        h3.block-title {
+            display: inline;
+        }
+        .block-title {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        .block-options>li>a,
+        .block-options>li>button {
+            display: block;
+            padding: 2px 3px;
+            color: @base-color-white;
+            opacity: .8;
+        }
+        .block-options>li>a:hover,
+        .block-options>li>button:hover {
+            text-decoration: none;
+            opacity: 1;
+        }
+        .btn-primary {
+            color: @base-color-white;
+            background-color: @base-color;
+            border-color: @base-border-color;
+        }
+        .btn {
+            font-weight: 600;
+            border-radius: 2px;
+            -webkit-transition: all .15s ease-out;
+            transition: all .15s ease-out;
+        }
+    }
+}
+
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.open>.dropdown-toggle.btn-primary.focus,
+.open>.dropdown-toggle.btn-primary:focus,
+.open>.dropdown-toggle.btn-primary:hover {
+    color: @base-color-white;
+    background-color: #FF7B00;
+    border-color: @base-border-color;
+    outline: 0px;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: @base-color-white!important;
+}
+
+md-input-container .md-input {
+    background: @base-color-white;
+}
+
+md-input-container.md-default-theme.md-input-has-value.md-input-focused label{
+color: @base-color;
+}
+md-input-container .md-input.md-input-focused {
+    border-color: @base-border-color;
+}

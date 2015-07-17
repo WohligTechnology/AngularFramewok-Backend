@@ -4,14 +4,13 @@ templateservicemod.service('TemplateService', function () {
     this.meta = "Google";
     this.metadesc = "Home";
 
-    this.headermenu = "views/headermenu.html";
+
     this.header = "views/header.html";
-    this.menu = "views/menu.html";
-    this.slider = "views/slider.html";
     this.content = "views/content.html";
-    this.footermenu = "views/footermenu.html";
+    //    this.footermenu = "views/footermenu.html";
     this.footer = "views/footer.html";
-    
-    var d=new Date();
-    this.year=d.getFullYear();
+    this.login = "views/login.html";
+
+    var d = new Date();
+    this.year = d.getFullYear();
 });

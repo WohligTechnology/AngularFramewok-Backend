@@ -1,32 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="firstapp">
+
 <head ng-controller="headerctrl">
-<title ng-bind="'Website Name - '+template.title">Website Name</title>
-<link rel="shortcut icon" href="img/favicon.ico"/>
-<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="lib/css/animate.css" />
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="lib/js/jquery-1.11.1.min.js"></script>
-<script src="lib/js/angular.min.js"></script>
-<!--<script src="lib/js/angular-animate.js"></script>-->
-<script src="lib/js/angular-route.min.js"></script>
-<!--<script src="lib/js/angular-resource.min.js"></script>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ng-bind="'Website Name - '+template.title">Angular Backend</title>
+    <link rel="shortcut icon" href="" />
 
-<script src="lib/js/bootstrap.min.js"></script>
+    <!-- Bower Css   -->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-material/demos/input/demoIcons/style.scss">
+
+    <!--  Main css  -->
+    <link rel="stylesheet/less" type="text/css" href="less/main.less" />
 
 
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/templateservice.js"></script>
-<script src="js/navigation.js"></script>
+    <!--Bower Js-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/less/dist/less.min.js"></script>
+
+
+    <!-- main js-->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/templateservice.js"></script>
+    <script src="js/navigation.js"></script>
 
 </head>
+
 <body>
 
 
-  <div  class="repeated-item"  ng-view></div>
- 
+    <div class="repeated-item" ng-view></div>
+
 
 </html>

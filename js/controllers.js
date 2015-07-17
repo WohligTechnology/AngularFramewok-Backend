@@ -1,17 +1,24 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngMaterial']);
 
-phonecatControllers.controller('home', ['$scope', 'TemplateService', 'NavigationService',
+phonecatControllers.controller('login', ['$scope', 'TemplateService', 'NavigationService',
   function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        $scope.menutitle = NavigationService.makeactive("Home");
-        TemplateService.title = $scope.menutitle;
+        //        $scope.menutitle = NavigationService.makeactive("Home");
+        //        TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+        TemplateService.list = 3;
+        $scope.project = {
+            description: 'Nuclear Missile Defense System',
+            rate: 500
+        };
+
   }]);
-phonecatControllers.controller('about', ['$scope', 'TemplateService', 'NavigationService',
+phonecatControllers.controller('user', ['$scope', 'TemplateService', 'NavigationService',
   function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        $scope.menutitle = NavigationService.makeactive("About");
-        TemplateService.title = $scope.menutitle;
+        //        $scope.menutitle = NavigationService.makeactive("About");
+        //        TemplateService.title = $scope.menutitle;
+        TemplateService.list = 1;
         $scope.navigation = NavigationService.getnav();
   }]);
 phonecatControllers.controller('services', ['$scope', 'TemplateService', 'NavigationService',
