@@ -132,14 +132,6 @@ phonecatControllers.controller('user', ['$scope', 'TemplateService', 'Navigation
 
   }]);
 
-//phonecatControllers.controller('sidemenu', ['$scope', 'TemplateService', 'NavigationService',
-//  function ($scope, $mdSidenav, TemplateService, NavigationService) {
-//        $scope.template = TemplateService;
-//        TemplateService.title = $scope.menutitle;
-//        $scope.navigation = NavigationService.getnav();
-//
-//  }]);
-
 phonecatControllers.controller('portfolio', ['$scope', 'TemplateService', 'NavigationService',
   function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -147,13 +139,53 @@ phonecatControllers.controller('portfolio', ['$scope', 'TemplateService', 'Navig
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
   }]);
+
 phonecatControllers.controller('forms', ['$scope', 'TemplateService', 'NavigationService',
-  function ($scope, TemplateService, NavigationService) {
+  function ($scope, TemplateService, NavigationService, $timeout) {
         $scope.template = TemplateService;
-        $scope.menutitle = NavigationService.makeactive("Forms");
+        $scope.menutitle = NavigationService.makeactive("forms");
         TemplateService.title = $scope.menutitle;
+        TemplateService.content = "views/forms.html";
         $scope.navigation = NavigationService.getnav();
-  }]);
+
+        $scope.clearValue = function () {
+            $scope.myModel = undefined;
+        };
+        $scope.states = [
+            {
+                category: 'Maharastra',
+                name: 'Mumbai'
+            },
+            {
+                category: 'Maharastra',
+                name: 'Nagpur'
+            },
+            {
+                category: 'Maharastra',
+                name: 'Pune'
+            },
+            {
+                category: 'Maharastra',
+                name: 'Nasik'
+            },
+            {
+                category: 'Maharastra',
+                name: 'Thane'
+            },
+            {
+                category: 'Telgana',
+                name: 'Hyderabad'
+            },
+            {
+                category: 'Telgana',
+                name: 'Green Pepper'
+            },
+            {
+                category: 'Gujrat',
+                name: 'Ahmedabad'
+            }
+      ];
+}]);
 
 
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
@@ -162,4 +194,33 @@ phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
         $scope.loginpage = function () {
             location.href = '#/login.html';
         };
+  }])
+phonecatControllers.controller('sidemenuCtrl', ['$scope', 'TemplateService',
+ function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+        $scope.oneAtATime = true;
+
+        $scope.groups = [
+            {
+                title: 'Dynamic Group Header - 1',
+                content: 'Dynamic Group Body - 1'
+    },
+            {
+                title: 'Dynamic Group Header - 2',
+                content: 'Dynamic Group Body - 2'
+    }
+  ];
+
+        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+        $scope.addItem = function () {
+            var newItemNo = $scope.items.length + 1;
+            $scope.items.push('Item ' + newItemNo);
+        };
+
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+
   }]);

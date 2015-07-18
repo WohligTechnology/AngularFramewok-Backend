@@ -73,9 +73,16 @@ body .sidemenu.col-md-3 md-list {
   display: block;
   padding: 0px 0;
 }
+body .sidemenu.col-md-3 md-list i {
+  color: #fff;
+  padding-right: 5px;
+}
 body .sidemenu.col-md-3 md-list md-list-item button.md-button:not([disabled]):hover {
   background-color: #FF9D43;
   border-radius: 0px;
+}
+body .sidemenu.col-md-3 md-list md-list-item button.md-button:not([disabled]):hover a {
+  text-decoration: none;
 }
 body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable {
   background-color: #FF9D43;
@@ -86,9 +93,31 @@ body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable 
 body .user table td.btn-edit button i {
   font-size: 14px;
 }
+body .user table td.acess-level {
+  padding: 12px 8px 12px 8px;
+}
+body .userform .panel-default > .panel-heading {
+  color: #fff;
+  background-color: #FF9D43;
+  border-color: #FF9D43;
+  border-radius: 0px;
+}
+body .userform span.glyphicon.glyphicon-th.mr5 {
+  padding-right: 10px;
+}
 body footer {
-  background-color: #f9f9f9;
+  background-color: #ff9d43;
   padding: 10px 0 0 0;
+}
+body footer p {
+  color: #ffffff;
+}
+body footer a {
+  color: #ffffff;
+}
+body footer a:hover {
+  text-decoration: none;
+  color: #ffffff;
 }
 input:-webkit-autofill,
 textarea:-webkit-autofill,

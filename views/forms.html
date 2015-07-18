@@ -1,0 +1,60 @@
+<section class="userform">
+    <div class="panel panel-default" style="border-radius:0px;">
+        <div class="panel-heading panel-hdr"><span class="glyphicon glyphicon-th mr5"></span>Update User
+        </div>
+        <div class="panel-body">
+            <md-content layout-padding class="autoScroll">
+                <form name="projectForm">
+                    <md-input-container>
+                        <label>User</label>
+                        <input ng-model="user.users" type="name">
+                    </md-input-container>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>First name</label>
+                            <input ng-model="user.firstName" required name="firstname" ng-model="project.username">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Last Name</label>
+                            <input ng-model="user.lastName" required name="lastname" ng-model="project.username">
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Country</label>
+                            <input ng-model="user.country" required name="country" ng-model="project.country">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>States</label>
+                            <input ng-model="user.state" required name="state" ng-model="project.state">
+                        </md-input-container>
+                        <md-select ng-model="size" placeholder="City" flex>
+                            <md-optgroup label="City">
+                                <md-option ng-value="state.name" ng-repeat="state in states | filter: {category: 'Maharastra' }">{{state.name}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Facebook Id</label>
+                            <input ng-model="user.facebookid" required name="facebookid" ng-model="project.facebookid">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Twitter Id</label>
+                            <input ng-model="user.twitid" required name="twitid" ng-model="project.twitid">
+                        </md-input-container>
+                    </div>
+                    <md-input-container flex>
+                        <label>Making</label>
+                        <input ng-model="user.making" required name="making" ng-model="project.making">
+                    </md-input-container>
+                </form>
+                <section layout="row" layout-sm="column" layout-align="center left">
+                    <a>
+                        <md-button class="md-raised md-primary">Submit</md-button>
+                    </a>
+                </section>
+            </md-content>
+        </div>
+    </div>
+</section>

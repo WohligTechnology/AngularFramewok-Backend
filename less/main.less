@@ -86,14 +86,21 @@ body {
         md-list {
             display: block;
             padding: 0px 0;
+            i {
+                color: #fff;
+                padding-right: 5px;
+            }
         }
         md-list md-list-item button.md-button:not([disabled]):hover {
             background-color: #FF9D43;
             border-radius: 0px;
+            a {
+                text-decoration: none;
+            }
         }
         md-list-item.md-raised.md-primary.ng-scope.md-clickable {
             background-color: #FF9D43;
-            a{
+            a {
                 color: #fff;
             }
         }
@@ -106,12 +113,38 @@ body {
                     font-size: @fa-font-size-base;
                 }
             }
+            td.acess-level {
+                padding: 12px 8px 12px 8px;
+            }
         }
     }
+    //user form
+    .userform {
+        .panel-default>.panel-heading {
+            color: #fff;
+            background-color: #FF9D43;
+            border-color: #FF9D43;
+            border-radius: 0px;
+        }
+        span.glyphicon.glyphicon-th.mr5 {
+            padding-right: 10px;
+        }
+    }
+    
     //footer
     footer {
-        background-color: @background-color-footer;
+        background-color: @base-color;
         padding: 10px 0 0 0;
+        p {
+            color: @base-color-white;
+        }
+        a {
+            color: @base-color-white;
+        }
+        a:hover {
+            text-decoration: none;
+            color: @base-color-white;
+        }
     }
 }
 
