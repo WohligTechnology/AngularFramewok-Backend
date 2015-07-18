@@ -17,23 +17,11 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'user'
         }).
-        when('/about', {
+        when('/forms', {
             templateUrl: 'views/template.html',
-            controller: 'about'
-        }).
-        when('/services', {
-            templateUrl: 'views/template.html',
-            controller: 'services'
-        }).
-        when('/portfolio', {
-            templateUrl: 'views/template.html',
-            controller: 'portfolio'
-        }).
-        when('/contact', {
-            templateUrl: 'views/template.html',
-            controller: 'contact'
+            controller: 'forms'
         }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/user'
         });
   }]);

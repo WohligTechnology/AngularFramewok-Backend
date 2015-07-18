@@ -1,0 +1,47 @@
+<div class="user">
+    <div class="block-header bg-primary">
+        <ul class="block-options">
+            <li>
+                <a href="#"><i class="fa fa-sign-in"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-sign-in"></i></a>
+            </li>
+        </ul>
+        <h3 class="block-title">Show User</h3>
+    </div>
+    <div class="user-table">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">First Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Access</th>
+                    <th class="text-center">Edit User</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="value in values">
+                    <td class="text-center">{{value.firstName}} {{value.lastName}}</td>
+                    <td class="text-center">{{value.email}}</td>
+                    <td class="text-center">Busniess</td>
+                    <td class="text-center btn-edit">
+                        <div class="btn-group">
+                            <button class="btn btn-xs btn-default" type="button"><i class="fa fa-pencil"></i>
+                                <md-tooltip>
+                                    Edit
+                                </md-tooltip>
+                            </button>
+                            <button class="btn btn-xs btn-default" type="button"><i class="fa fa-times"></i>
+                                <md-tooltip>
+                                    Delete
+                                </md-tooltip>
+                            </button>
+                        </div>
+                    </td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

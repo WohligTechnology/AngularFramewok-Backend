@@ -1,47 +1,26 @@
-<!--
-<div ng-include="template.headermenu" class="template headermenu"></div>
-<div ng-include="template.header" class="template header"></div>
-<div ng-include="template.menu" class="template menu"></div>
-<div ng-include="template.slider" class="template slider"></div>
-<div ng-include="template.content" class="template content"></div>
-<div ng-include="template.footermenu" class="template footermenu"></div>
-<div ng-include="template.footer" class="template footer"></div>
--->
-
-
 <div class="container-fluid">
-    <div class="row templatemain header" ng-if="template.list==1 || template.list==2">
-        <div class="col-md-12">
-            <div ng-include="template.header" class="template header"></div>
+    <header>
+        <div ng-include="template.header" class="template header"></div>
+    </header>
+    <section class="row">
+        <div class="sidemenu col-md-3">
+            <div ng-include="template.sidemenu" class="template sidemenu"></div>
         </div>
-    </div>
-    <div class="row templatemain maincontent" ng-if="template.list==1">
-        <div class="col-md-3 templatemain menu" style="margin-top:-3px;">
-            <div ng-include="template.menu" class="template menu"></div>
+
+        <div class="content col-md-9">
+            <div ng-include="template.content" ng-if="!template.contentmenu" class="template content"></div>
+            <div class="row" ng-if="template.contentmenu">
+                <div class="col-md-9">
+                    <div ng-include="template.content" class="template content"></div>
+                </div>
+                <div class="col-md-3">
+                    <div ng-include="template.contentmenu" class="template content"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 templatemain content">
-            <div ng-include="template.content" class="template content"></div>
-        </div>
-        <div class="col-md-3 templatemain content" style="  margin-top: 10px; padding-left: 3px;">
-            <div ng-include="template.submenu" class="template content"></div>
-        </div>
-    </div>
-    <div class="row templatemain maincontent" ng-if="template.list==2">
-        <div class="col-md-3 templatemain menu" style="margin-top:-3px;">
-            <div ng-include="template.menu" class="template menu"></div>
-        </div>
-        <div class="col-md-9 templatemain content">
-            <div ng-include="template.content" class="template content"></div>
-        </div>
-    </div>
-    <div class="row templatemain maincontent" ng-if="template.list==3">
-        <div class="templatemain content">
-            <div ng-include="template.content" class="template content"></div>
-        </div>
-    </div>
-    <div class="row templatemain footer" ng-if="template.list==1 || template.list==2">
-        <div class="col-md-12">
-            <div ng-include="template.footer" class="template footer"></div>
-        </div>
-    </div>
+
+    </section>
 </div>
+<footer>
+    <div ng-include="template.footer" class="template footer"></div>
+</footer>

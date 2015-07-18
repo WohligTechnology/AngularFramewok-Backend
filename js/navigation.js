@@ -2,48 +2,41 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function () {
     var navigation = [{
-        name: "Home",
+        name: "Dashboard",
         classis: "active",
-        link:"#/home",
+        link: "#/dashboard",
         subnav: []
     }, {
-        name: "About",
+        name: "User",
         active: "",
-        link:"#/about",
+        link: "#/user",
         subnav: []
     }, {
-        name: "Services",
+        name: "Forms",
         classis: "",
-        link:"#/services",
+        link: "#/forms",
         subnav: []
     }, {
-        name: "Portfolio",
+        name: "Grid View",
         classis: "",
-        link:"#/portfolio",
-        subnav: []
-    }, {
-        name: "Contact",
-        classis: "",
-        link:"#/contact",
+        link: "#/grid",
         subnav: []
     }];
 
     return {
-        getnav: function() {
+        getnav: function () {
             return navigation;
         },
-        makeactive: function(menuname) {
-            for(var i=0;i<navigation.length;i++) {
-                if(navigation[i].name==menuname)
-                {
-                    navigation[i].classis="active";
-                }
-                else {
-                    navigation[i].classis="";
+        makeactive: function (menuname) {
+            for (var i = 0; i < navigation.length; i++) {
+                if (navigation[i].name == menuname) {
+                    navigation[i].classis = "active";
+                } else {
+                    navigation[i].classis = "";
                 }
             }
             return menuname;
         },
-        
+
     }
 });
