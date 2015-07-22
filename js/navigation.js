@@ -19,7 +19,7 @@ var navigationservice = angular.module('navigationservice', [])
     }, {
         name: "Grid View",
         classis: "",
-        link: "#/grid",
+        link: "#/gridview",
         subnav: []
     }];
 

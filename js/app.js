@@ -21,6 +21,14 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'forms'
         }).
+        when('/gridview', {
+            templateUrl: 'views/template.html',
+            controller: 'gridview'
+        }).
+        when('/dashboard', {
+            templateUrl: 'views/template.html',
+            controller: 'dashboard'
+        }).
         otherwise({
             redirectTo: '/user'
         });
