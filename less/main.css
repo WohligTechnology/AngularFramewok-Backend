@@ -126,6 +126,9 @@ body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable 
 body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable a {
   color: #fff;
 }
+body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable a:hover {
+  text-decoration: none;
+}
 body .user table {
   margin-bottom: 0px;
   color: #000000;

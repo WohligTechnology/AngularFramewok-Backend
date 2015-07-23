@@ -1,4 +1,4 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngMaterial', 'ui.bootstrap', 'highcharts-ng', 'ngMessages']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngMaterial', 'ui.bootstrap', 'highcharts-ng', 'ngMessages', 'angular-momentjs']);
 
 phonecatControllers.controller('login', ['$scope', 'TemplateService', 'NavigationService',
   function ($scope, TemplateService, NavigationService) {
@@ -165,7 +165,7 @@ phonecatControllers.controller('gridview', ['$scope', 'TemplateService', 'Naviga
 }]);
 
 phonecatControllers.controller('dashboard', ['$scope', 'TemplateService', 'NavigationService',
-  function ($scope, TemplateService, NavigationService, $timeout, $q) {
+  function ($scope, TemplateService, NavigationService, $timeout, $moment) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("dashboard");
         TemplateService.title = $scope.menutitle;

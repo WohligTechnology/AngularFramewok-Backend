@@ -26,6 +26,7 @@
     "lodash": "~3.10.0",
     "moment": "~2.10.3",
     "highcharts-ng": "~0.0.8",
-    "angular-messages": "~1.4.3"
+    "angular-messages": "~1.4.3",
+    "angular-momentjs": "~0.2.2"
   }
 }
