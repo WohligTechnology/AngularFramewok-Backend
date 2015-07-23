@@ -365,3 +365,9 @@ h3.block-title {
 button {
   outline: 0px!important;
 }
+md-radio-button .md-on {
+  background-color: #ff9d43;
+}
+md-radio-button.md-checked .md-off {
+  border-color: #ff9d43;
+}

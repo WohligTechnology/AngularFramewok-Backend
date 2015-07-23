@@ -152,16 +152,6 @@ phonecatControllers.controller('gridview', ['$scope', 'TemplateService', 'Naviga
                 return (state.value.indexOf(lowercaseQuery) === 0);
             };
         }
-
-        //        $scope.demo = {
-        //            topDirections: ['left', 'up'],
-        //            bottomDirections: ['down', 'right'],
-        //            isOpen: false,
-        //            availableModes: ['md-fling', 'md-scale'],
-        //            selectedMode: 'md-fling',
-        //            availableDirections: ['up', 'down', 'left', 'right'],
-        //            selectedDirection: 'up'
-        //        };
 }]);
 
 phonecatControllers.controller('dashboard', ['$scope', 'TemplateService', 'NavigationService',
