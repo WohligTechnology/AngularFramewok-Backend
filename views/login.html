@@ -15,9 +15,9 @@
             <form name="projectForm">
                 <md-input-container>
                     <label>Email Id</label>
-                    <input required name="Email" ng-model="project.email">
-                    <div ng-messages="projectForm.email.$error">
-                        <div ng-message="required">This is required.</div>
+                    <input required name="emailName" ng-model="project.emailName" type="email">
+                    <div ng-messages="projectForm.emailName.$error">
+                        <div ng-message="email">Not a valid email.</div>
                     </div>
                 </md-input-container>
                 <md-input-container>

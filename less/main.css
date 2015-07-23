@@ -193,10 +193,13 @@ body .gridview .card .card-content p {
 }
 body .gridview .card .card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 15px;
+  color: #ff9d43;
+}
+body .gridview .card .card-action button {
+  margin: 0;
 }
 body .gridview .card .card-action a {
-  color: #ffab40;
+  color: #ff9d43;
   padding: 0px 20px 0 0;
   -webkit-transition: color 0.3s ease;
   -moz-transition: color 0.3s ease;
@@ -216,11 +219,49 @@ body .gridview .card .card-title {
   bottom: 0;
   left: 0;
   padding: 20px;
-  color: #fff;
+  color: #ffffff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
   font-size: 18px;
   margin: 0;
   line-height: 16px;
+}
+body .dashboard .card {
+  color: #ffffff;
+  height: 95px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+}
+body .dashboard .card i {
+  font-size: 50px;
+  line-height: 1.8;
+}
+body .dashboard .card p.score {
+  text-align: right;
+  font-size: 40px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  font-weight: 100;
+}
+body .dashboard .card p.comments {
+  text-align: right;
+}
+body .dashboard .card .col-md-3 + .col-md-3 {
+  padding-left: 10px;
+}
+body .dashboard .card1 {
+  border-color: #ff5722;
+  background-color: #ff5722;
+}
+body .dashboard .card2 {
+  border-color: #00bcd4;
+  background-color: #00bcd4;
+}
+body .dashboard .card3 {
+  border-color: #3f51b5;
+  background-color: #3f51b5;
+}
+body .dashboard .card4 {
+  border-color: #009688;
+  background-color: #009688;
 }
 body footer {
   background-color: #ff9d43;
