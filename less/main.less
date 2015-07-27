@@ -1,7 +1,9 @@
-@base-color-white: #fff;
-@base-color-black: #000;
-@base-color: #FF9D43;
-@base-border-color: #FF7B00;
+@base-color-white: #FFFFFF;
+@base-color-black: #212121;
+@base-color: #F44336;
+@base-dark-color: #D32F2F;
+@base-border-color: #D32F2F;
+@accent-color: #00BCD4;
 @body-font: 14px;
 @sub-head-pixel: 18px;
 @base-width: 100%;
@@ -34,6 +36,7 @@ section.main-content {
 body {
     .content.col-md-9 {
         margin-top: 20px;
+        padding-bottom: 50px;
     }
     //login page
     .login-cont {
@@ -107,7 +110,7 @@ body {
             width: 150px;
         }
         .col-xs-3.logos {
-            background: #FF9D43;
+            background: @base-color;
             padding: 0px 5px;
         }
         .logout-btn {
@@ -119,15 +122,55 @@ body {
         }
     }
     .sidemenu.col-md-3 {
-        padding: 0;
-        md-list {
-            display: block;
-            padding: 0px 0px 0px 0;
-            background-color: #FF9D43;
+        section.sidemenus {
+            position: fixed;
+            width: 25%;
+            background-color: #F44336;
             min-height: 600px;
-            i {
-                color: #fff;
-                padding-right: 5px;
+        }
+        padding: 0;
+        ul.menu {
+            list-style: none;
+            padding: 0;
+            li {
+                height: 38px;
+                -moz-transition: 1s;
+                -ms-transition: 1s;
+                -o-transition: 1s;
+                -webkit-transition: 1s;
+                transition: 1s;
+                .md-button.md-primary {
+                    margin: 0;
+                    width: 100%;
+                    box-shadow: 0px 0px 0px #fff;
+                    border-radius: 0;
+                    border-bottom: 1px solid @base-color-white;
+                    overflow: initial;
+                    .fa.fa-angle-down {
+                        float: right;
+                        padding: 8px 5px 8px 5px;
+                        font-size: @base-pixel;
+                        transition: 1s ease all;
+                    }
+                }
+                .md-button.md-primary.active {
+                    .fa.fa-angle-down {
+                        transform: rotate(180deg);
+                    }
+                }
+                ul.submenu {
+                    padding: 0px;
+                    transition: 1s ease all;
+                    .md-button.md-primary {
+                        padding-left: 50px;
+                    }
+                }
+                span {
+                    text-transform: capitalize;
+                }
+            }
+            li.active {
+                height: auto;
             }
         }
         md-list md-list-item button.md-button:not([disabled]):hover {
@@ -142,8 +185,7 @@ body {
             a {
                 color: #fff;
             }
-            a:hover
-            {
+            a:hover {
                 text-decoration: none;
             }
         }
@@ -161,18 +203,25 @@ body {
             td.acess-level {
                 padding: 12px 8px 12px 8px;
             }
-            td {
-                color: #444;
+            th {
+                background-color: @accent-color;
+                color: @base-color-white;
+            }
+            tr:nth-child(odd) td {
+                background-color: #F4F4F4;
+            }
+            tr:nth-child(even) td {
+                background-color: #E0E9F0;
             }
         }
         .panel-default {
             .panel-heading {
-                color: #fff;
-                background-color: #FF9D43;
-                border-color: #FF9D43;
+                color: @base-color-white;
+                background-color: @base-color;
+                border-color: @base-color;
                 border-radius: 0px;
                 i.fa.fa-th {
-                    padding-right: 5px;
+                    padding-right: 10px;
                 }
             }
             span.glyphicon.glyphicon-th.mr5 {
@@ -182,13 +231,13 @@ body {
     }
     //user form
     .userform {
-        .panel-default>.panel-heading {
-            color: #fff;
-            background-color: #FF9D43;
-            border-color: #FF9D43;
+        .panel-heading.panel-hdr {
+            color: @base-color-white;
+            background-color: @base-color;
+            border-color: @base-color;
             border-radius: 0px;
         }
-        i.fa fa-th {
+        .panel-heading.panel-hdr i {
             padding-right: 10px;
         }
     }
@@ -304,6 +353,9 @@ body {
     }
     //footer
     footer {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
         background-color: @base-color;
         padding: 10px 0 0 0;
         p {
@@ -334,8 +386,9 @@ md-input-container.md-default-theme.md-input-has-value.md-input-focused label {
     color: @base-color;
 }
 
-md-input-container .md-input.md-input-focused {
-    border-color: @base-border-color;
+md-input-container .md-input.md-input-focused,
+md-input-container:not(.md-input-valid).md-input-focused .md-input {
+    border-color: @accent-color;
 }
 
 a.md-button.md-primary.md-raised,
@@ -346,7 +399,11 @@ a.md-button.md-primary.md-fab,
     background-color: @base-color;
 }
 
-.md-button.md-primary.md-raised:not([disabled]):hover {
+.md-button.md-primary.md-raised:not([disabled]).md-focused,
+.md-button.md-primary.md-raised:not([disabled]):hover,
+a.md-button.md-primary.md-raised:not([disabled]):hover,
+a.md-button.md-primary.md-raised:not([disabled]).md-focused,
+{
     background-color: @base-color;
     color: @base-color-white;
     transition: 0.3s;
@@ -425,9 +482,9 @@ button {
 }
 
 md-radio-button .md-on {
-    background-color: rgb(255, 157, 67);
+    background-color: @accent-color;
 }
 
 md-radio-button.md-checked .md-off {
-    border-color: rgb(255, 157, 67);
+    border-color: @accent-color;
 }

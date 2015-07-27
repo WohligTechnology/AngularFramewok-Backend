@@ -19,6 +19,7 @@ section.main-content {
 }
 body .content.col-md-9 {
   margin-top: 20px;
+  padding-bottom: 50px;
 }
 body .login-cont {
   padding: 20px;
@@ -29,15 +30,15 @@ body .login-cont .login-header {
 }
 body .login-cont .bg-primary {
   color: #ffffff;
-  background-color: #ff9d43;
+  background-color: #f44336;
 }
 body .login-cont .btn1 {
   color: #312e2e;
-  background-color: #ff9d43;
+  background-color: #f44336;
   font-size: 16px;
 }
 body .login-cont .btn1:not([disabled]):hover {
-  background-color: #ff9d43;
+  background-color: #f44336;
   color: white;
 }
 body .login-cont .block-header {
@@ -90,7 +91,7 @@ body header .logo img {
   width: 150px;
 }
 body header .col-xs-3.logos {
-  background: #FF9D43;
+  background: #f44336;
   padding: 0px 5px;
 }
 body header .logout-btn {
@@ -103,15 +104,53 @@ body header .logo {
 body .sidemenu.col-md-3 {
   padding: 0;
 }
-body .sidemenu.col-md-3 md-list {
-  display: block;
-  padding: 0px 0px 0px 0;
-  background-color: #FF9D43;
+body .sidemenu.col-md-3 section.sidemenus {
+  position: fixed;
+  width: 25%;
+  background-color: #F44336;
   min-height: 600px;
 }
-body .sidemenu.col-md-3 md-list i {
-  color: #fff;
-  padding-right: 5px;
+body .sidemenu.col-md-3 ul.menu {
+  list-style: none;
+  padding: 0;
+}
+body .sidemenu.col-md-3 ul.menu li {
+  height: 38px;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+body .sidemenu.col-md-3 ul.menu li .md-button.md-primary {
+  margin: 0;
+  width: 100%;
+  box-shadow: 0px 0px 0px #fff;
+  border-radius: 0;
+  border-bottom: 1px solid #ffffff;
+  overflow: initial;
+}
+body .sidemenu.col-md-3 ul.menu li .md-button.md-primary .fa.fa-angle-down {
+  float: right;
+  padding: 8px 5px 8px 5px;
+  font-size: 20px;
+  transition: 1s ease all;
+}
+body .sidemenu.col-md-3 ul.menu li .md-button.md-primary.active .fa.fa-angle-down {
+  transform: rotate(180deg);
+}
+body .sidemenu.col-md-3 ul.menu li ul.submenu {
+  padding: 0px;
+  transition: 1s ease all;
+}
+body .sidemenu.col-md-3 ul.menu li ul.submenu .md-button.md-primary {
+  padding-left: 50px;
+}
+body .sidemenu.col-md-3 ul.menu li span {
+  text-transform: capitalize;
+}
+body .sidemenu.col-md-3 ul.menu li.active {
+  height: auto;
 }
 body .sidemenu.col-md-3 md-list md-list-item button.md-button:not([disabled]):hover {
   background-color: #FF9D43;
@@ -131,7 +170,7 @@ body .sidemenu.col-md-3 md-list-item.md-raised.md-primary.ng-scope.md-clickable 
 }
 body .user table {
   margin-bottom: 0px;
-  color: #000000;
+  color: #212121;
 }
 body .user table td.btn-edit button i {
   font-size: 14px;
@@ -139,28 +178,35 @@ body .user table td.btn-edit button i {
 body .user table td.acess-level {
   padding: 12px 8px 12px 8px;
 }
-body .user table td {
-  color: #444;
+body .user table th {
+  background-color: #00bcd4;
+  color: #ffffff;
+}
+body .user table tr:nth-child(odd) td {
+  background-color: #F4F4F4;
+}
+body .user table tr:nth-child(even) td {
+  background-color: #E0E9F0;
 }
 body .user .panel-default .panel-heading {
-  color: #fff;
-  background-color: #FF9D43;
-  border-color: #FF9D43;
+  color: #ffffff;
+  background-color: #f44336;
+  border-color: #f44336;
   border-radius: 0px;
 }
 body .user .panel-default .panel-heading i.fa.fa-th {
-  padding-right: 5px;
+  padding-right: 10px;
 }
 body .user .panel-default span.glyphicon.glyphicon-th.mr5 {
   padding-right: 10px;
 }
-body .userform .panel-default > .panel-heading {
-  color: #fff;
-  background-color: #FF9D43;
-  border-color: #FF9D43;
+body .userform .panel-heading.panel-hdr {
+  color: #ffffff;
+  background-color: #f44336;
+  border-color: #f44336;
   border-radius: 0px;
 }
-body .userform i.fa fa-th {
+body .userform .panel-heading.panel-hdr i {
   padding-right: 10px;
 }
 body .gridview .card {
@@ -196,13 +242,13 @@ body .gridview .card .card-content p {
 }
 body .gridview .card .card-action {
   border-top: 1px solid rgba(160, 160, 160, 0.2);
-  color: #ff9d43;
+  color: #f44336;
 }
 body .gridview .card .card-action button {
   margin: 0;
 }
 body .gridview .card .card-action a {
-  color: #ff9d43;
+  color: #f44336;
   padding: 0px 20px 0 0;
   -webkit-transition: color 0.3s ease;
   -moz-transition: color 0.3s ease;
@@ -267,7 +313,10 @@ body .dashboard .card4 {
   background-color: #009688;
 }
 body footer {
-  background-color: #ff9d43;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #f44336;
   padding: 10px 0 0 0;
 }
 body footer p {
@@ -289,25 +338,29 @@ md-input-container .md-input {
   background: #ffffff;
 }
 md-input-container.md-default-theme.md-input-has-value.md-input-focused label {
-  color: #ff9d43;
+  color: #f44336;
 }
-md-input-container .md-input.md-input-focused {
-  border-color: #ff7b00;
+md-input-container .md-input.md-input-focused,
+md-input-container:not(.md-input-valid).md-input-focused .md-input {
+  border-color: #00bcd4;
 }
 a.md-button.md-primary.md-raised,
 a.md-button.md-primary.md-fab,
 .md-button.md-primary.md-raised,
 .md-button.md-primary.md-fab {
   color: #ffffff;
-  background-color: #ff9d43;
+  background-color: #f44336;
 }
-.md-button.md-primary.md-raised:not([disabled]):hover {
-  background-color: #ff9d43;
+.md-button.md-primary.md-raised:not([disabled]).md-focused,
+.md-button.md-primary.md-raised:not([disabled]):hover,
+a.md-button.md-primary.md-raised:not([disabled]):hover,
+a.md-button.md-primary.md-raised:not([disabled]).md-focused {
+  background-color: #f44336;
   color: #ffffff;
   transition: 0.3s;
 }
 .bg-primary {
-  background-color: #ff9d43;
+  background-color: #f44336;
 }
 .block-header {
   padding: 15px 20px;
@@ -366,8 +419,8 @@ button {
   outline: 0px!important;
 }
 md-radio-button .md-on {
-  background-color: #ff9d43;
+  background-color: #00bcd4;
 }
 md-radio-button.md-checked .md-off {
-  border-color: #ff9d43;
+  border-color: #00bcd4;
 }

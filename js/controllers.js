@@ -13,7 +13,6 @@ phonecatControllers.controller('user', ['$scope', 'TemplateService', 'Navigation
         TemplateService.title = $scope.menutitle;
         TemplateService.content = "views/user.html";
         TemplateService.list = 1;
-        $scope.navigation = NavigationService.getnav();
 
         //tables
 
@@ -86,7 +85,6 @@ phonecatControllers.controller('gridview', ['$scope', 'TemplateService', 'Naviga
         $scope.menutitle = NavigationService.makeactive("girdview");
         TemplateService.content = "views/gridview.html";
         TemplateService.title = $scope.menutitle;
-        $scope.navigation = NavigationService.getnav();
 
         //outo fill
         var self = this;
@@ -154,14 +152,74 @@ phonecatControllers.controller('gridview', ['$scope', 'TemplateService', 'Naviga
         }
 }]);
 
-phonecatControllers.controller('dashboard', ['$scope', 'TemplateService', 'NavigationService',
-  function ($scope, TemplateService, NavigationService, $timeout, $moment) {
+phonecatControllers.controller('dashboard',
+    function ($scope, TemplateService, NavigationService, $timeout, $moment) {
         $scope.template = TemplateService;
         $scope.menutitle = NavigationService.makeactive("dashboard");
         TemplateService.title = $scope.menutitle;
         TemplateService.content = "views/dashboard.html";
-        $scope.navigation = NavigationService.getnav();
-  }]);
+
+
+        $scope.chartConfig = {
+            options: {
+                chart: {
+                    type: 'bar'
+                }
+            },
+            series: [{
+                data: [10, 15, 12, 8, 7]
+        }],
+            title: {
+                text: 'Hello'
+            },
+
+            loading: false
+        };
+
+
+
+        $scope.pieChart = {
+            options: {
+                chart: {
+                    type: 'pie'
+                }
+            },
+            title: {
+                text: 'Browser market shares January, 2015 to May, 2015'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            series: [{
+                name: "Brands",
+                colorByPoint: true,
+                data: [{
+                    name: "Microsoft Internet Explorer",
+                    y: 56.33
+            }, {
+                    name: "Chrome",
+                    y: 24.03,
+                    sliced: true,
+                    selected: true
+            }, {
+                    name: "Firefox",
+                    y: 10.38
+            }, {
+                    name: "Safari",
+                    y: 4.77
+            }, {
+                    name: "Opera",
+                    y: 0.91
+            }, {
+                    name: "Proprietary or Undetectable",
+                    y: 0.2
+            }]
+        }]
+        };
+
+
+    });
+
 
 
 
@@ -171,7 +229,6 @@ phonecatControllers.controller('forms', ['$scope', 'TemplateService', 'Navigatio
         $scope.menutitle = NavigationService.makeactive("forms");
         TemplateService.title = $scope.menutitle;
         TemplateService.content = "views/forms.html";
-        $scope.navigation = NavigationService.getnav();
 
         $scope.clearValue = function () {
             $scope.myModel = undefined;
@@ -222,7 +279,6 @@ phonecatControllers.controller('forms', ['$scope', 'TemplateService', 'Navigatio
         };
 }]);
 
-
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;
@@ -230,35 +286,18 @@ phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
             location.href = '#/login.html';
         };
   }])
-phonecatControllers.controller('sidemenuCtrl', ['$scope', 'TemplateService',
- function ($scope, TemplateService) {
+
+phonecatControllers.controller('sidemenuCtrl',
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        $scope.oneAtATime = true;
+        $scope.navigation = NavigationService.getNav();
 
-        $scope.groups = [
-            {
-                title: 'Dynamic Group Header - 1',
-                content: 'Dynamic Group Body - 1'
-    },
-            {
-                title: 'Dynamic Group Header - 2',
-                content: 'Dynamic Group Body - 2'
-    }
-  ];
-
-        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-        $scope.addItem = function () {
-            var newItemNo = $scope.items.length + 1;
-            $scope.items.push('Item ' + newItemNo);
-        };
-
-        $scope.status = {
-            isFirstOpen: true,
-            isFirstDisabled: false
+        $scope.changeMenuShow = function (menu) {
+            menu.show = !menu.show;
         };
 
 
 
 
-  }]);
+
+    });

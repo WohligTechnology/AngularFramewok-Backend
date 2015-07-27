@@ -5,26 +5,41 @@ var navigationservice = angular.module('navigationservice', [])
         name: "Dashboard",
         classis: "active",
         link: "#/dashboard",
-        subnav: []
+        show: false,
+        subnav: [
+            {
+                name: "Dashboard",
+                classis: "",
+                link: "#/dashboard",
+            },
+            {
+                name: "Dashboard",
+                classis: "",
+                link: "#/dashboard",
+            }
+        ]
     }, {
         name: "User",
         active: "",
         link: "#/user",
+        show: false,
         subnav: []
     }, {
         name: "Forms",
         classis: "",
         link: "#/forms",
+        show: false,
         subnav: []
     }, {
         name: "Grid View",
         classis: "",
         link: "#/gridview",
+        show: false,
         subnav: []
     }];
 
     return {
-        getnav: function () {
+        getNav: function () {
             return navigation;
         },
         makeactive: function (menuname) {
